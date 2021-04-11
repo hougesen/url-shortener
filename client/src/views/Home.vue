@@ -59,7 +59,7 @@ export default {
       }
     },
 
-    openModal(modal) {
+    openModal() {
       this.modal = true;
     },
     catchCloseModal() {

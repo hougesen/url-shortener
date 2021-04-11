@@ -11,7 +11,9 @@
 
       <tr v-for="(link, index) in userLinks" :key="index">
         <th>
-          <a :href="prefixUrl(link.shortCode)"> https://houge.ninja/l/{{ link.shortCode }} </a>
+          <a :href="prefixUrl(link.shortCode)">
+            https://houge.ninja/l/{{ link.shortCode }}
+          </a>
         </th>
 
         <th>

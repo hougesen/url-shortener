@@ -2,7 +2,13 @@
   <div>
     <h1>Generate new link</h1>
     <form @submit.prevent="generateLink">
-      <input type="text" id="link" name="link" v-model="link" placeholder="Shorten your link" />
+      <input
+        type="text"
+        id="link"
+        name="link"
+        v-model="link"
+        placeholder="Shorten your link"
+      />
       <button type="submit">Shorten</button>
     </form>
     <h2 v-if="generatedLink">
@@ -36,7 +42,10 @@ export default {
       console.log(this.getUserId);
       let request;
       if (this.getUserId != "") {
-        request = await GeneratorService.generateLink(this.link, this.getUserId);
+        request = await GeneratorService.generateLink(
+          this.link,
+          this.getUserId
+        );
       } else {
         request = await GeneratorService.generateLink(this.link);
       }

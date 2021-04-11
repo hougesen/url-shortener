@@ -9,9 +9,7 @@
         </svg>
       </div>
       <div class="grid">
-        <div>
-          <LoginForm @closeModal="closeModal" />
-        </div>
+        <div><LoginForm @closeModal="closeModal" /></div>
         <div>
           <SignupForm @closeModal="closeModal" />
         </div>

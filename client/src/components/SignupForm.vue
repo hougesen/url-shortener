@@ -3,10 +3,20 @@
     <h1>Sign up</h1>
     <form @submit.prevent="createNewUser">
       <label for="email">Email</label>
-      <input type="email" v-model="email" placeholder="email" autocomplete="email" />
+      <input
+        type="email"
+        v-model="email"
+        placeholder="email"
+        autocomplete="email"
+      />
 
       <label for="password">Password</label>
-      <input type="password" v-model="password" placeholder="password" autocomplete="new-password" />
+      <input
+        type="password"
+        v-model="password"
+        placeholder="password"
+        autocomplete="new-password"
+      />
       {{ errorMsg }}
       <button type="submit" class="button-square">Sign up</button>
     </form>

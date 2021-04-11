@@ -3,10 +3,22 @@
     <h1>Sign in</h1>
     <form @submit.prevent="loginToUser">
       <label for="email">Email</label>
-      <input type="email" v-model="email" placeholder="email" autocomplete="email" required />
+      <input
+        type="email"
+        v-model="email"
+        placeholder="email"
+        autocomplete="email"
+        required
+      />
 
       <label for="password">Password</label>
-      <input type="password" v-model="password" placeholder="password" autocomplete="current-password" required />
+      <input
+        type="password"
+        v-model="password"
+        placeholder="password"
+        autocomplete="current-password"
+        required
+      />
 
       {{ errorMsg }}
       <button type="submit" class="button-square">Sign in</button>

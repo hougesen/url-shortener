@@ -43,8 +43,8 @@ router.post("/newUser", async (req, res) => {
   let existCheck = await emailInUse(req.body.email);
 
   if (existCheck) {
-    res.status(400).send({ success: false, msg: "Email already in use" });
-    return { success: false, msg: "Email already in use" };
+    res.status(400).send({ auth: false, msg: "Email already in use" });
+    return { auth: false, msg: "Email already in use" };
   }
 
   const new_user = {
@@ -57,11 +57,11 @@ router.post("/newUser", async (req, res) => {
   await u
     .save()
     .then(() => {
-      res.status(200).send({ success: true, msg: "User created", obj: u });
+      res.status(200).send({ auth: true, msg: "User created", obj: u });
     })
     .catch((err) => {
       console.log(err);
-      res.send({ success: false, msg: "Please try again", err });
+      res.send({ auth: false, msg: "Please try again", err });
     });
 });
 
@@ -69,9 +69,6 @@ router.post("/login", async (req, res) => {
   const user = await Users.findOne({ email: req.body.email });
 
   if (user) {
-    console.log("success");
-    console.log(user);
-
     let validPassword = await validatePassword(user.password, req.body.password);
 
     if (validPassword) {
