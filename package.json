@@ -1,5 +1,5 @@
 {
-  "name": "link-shortener",
+  "name": "url-shortener",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hougesen/link-shortener.git"
+    "url": "git+https://github.com/Hougesen/url-shortener.git"
   },
   "author": "Mads Hougesen <mads@mhouge.dk> (https://mhouge.dk)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Hougesen/link-shortener/issues"
+    "url": "https://github.com/Hougesen/url-shortener/issues"
   },
-  "homepage": "https://github.com/Hougesen/link-shortener#readme",
+  "homepage": "https://github.com/Hougesen/url-shortener#readme",
   "dependencies": {
     "argon2": "^0.27.2",
     "body-parser": "^1.19.0",

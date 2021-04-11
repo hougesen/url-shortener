@@ -15,6 +15,8 @@
     <UserLinks v-if="userInfo.userId != undefined" />
 
     <Modal v-if="modal" :modal="modal" @closeModal="catchCloseModal" />
+
+    <Footer />
   </div>
 </template>
 
@@ -23,6 +25,7 @@ import Generator from "../components/Generator.vue";
 import UserLinks from "../components/UserLinks.vue";
 
 import Modal from "../components/Modal.vue";
+import Footer from "../components/Footer.vue";
 
 export default {
   name: "Home",
@@ -30,6 +33,7 @@ export default {
     Generator,
     UserLinks,
     Modal,
+    Footer,
   },
   data() {
     return {
