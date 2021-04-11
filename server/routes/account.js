@@ -57,7 +57,7 @@ router.post("/newUser", async (req, res) => {
   await u
     .save()
     .then(() => {
-      res.status(200).send({ auth: true, msg: "User created", obj: u });
+      res.status(200).send({ auth: true, msg: "User created succesfully", userId: u._id });
     })
     .catch((err) => {
       console.log(err);
