@@ -8,9 +8,7 @@ router.get("/:shortCode", async (req, res) => {
 
   if (link) {
     res.status(200).send({ to: link.link });
-
     link.clickCount++;
-
     await link.save();
   } else {
     res.status(404).send({ msg: "error" });

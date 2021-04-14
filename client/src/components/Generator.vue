@@ -2,22 +2,10 @@
   <div>
     <h1>Generate new link</h1>
     <form @submit.prevent="generateLink">
-      <input
-        type="url"
-        id="link"
-        name="link"
-        v-model="link"
-        placeholder="URL to shorten"
-      />
+      <input type="url" id="link" name="link" v-model="link" placeholder="URL to shorten" />
       <button type="submit">Shorten</button>
     </form>
-    <input
-      type="text"
-      v-model="generatedLink"
-      placeholder="Shortened URL"
-      id="generatedUrl"
-      disabled
-    />
+    <input type="text" v-model="generatedLink" placeholder="Shortened URL" id="generatedUrl" readonly />
     <button @click.prevent="copyUrl">Copy</button>
   </div>
 </template>
@@ -43,10 +31,7 @@ export default {
       console.log(this.getUserId);
       let request;
       if (this.getUserId != "") {
-        request = await GeneratorService.generateLink(
-          this.link,
-          this.getUserId
-        );
+        request = await GeneratorService.generateLink(this.link, this.getUserId);
       } else {
         request = await GeneratorService.generateLink(this.link);
       }

@@ -84,7 +84,6 @@ router.post("/login", async (req, res) => {
 
 router.get("/allLinks/:userId", async (req, res) => {
   let links = await Links.find({ userId: req.params.userId });
-  console.log(links);
 
   res.send(links);
 });
