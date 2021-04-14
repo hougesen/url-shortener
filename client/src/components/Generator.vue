@@ -28,14 +28,12 @@ export default {
   },
   methods: {
     async generateLink() {
-      console.log(this.getUserId);
       let request;
       if (this.getUserId != "") {
         request = await GeneratorService.generateLink(this.link, this.getUserId);
       } else {
         request = await GeneratorService.generateLink(this.link);
       }
-      console.log(request);
       this.generatedLink = `https://houge.ninja/l/${request.shortCode}`;
 
       this.$emit("newLink");

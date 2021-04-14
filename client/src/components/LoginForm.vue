@@ -3,22 +3,10 @@
     <h1>Sign in</h1>
     <form @submit.prevent="loginToUser">
       <label for="email">Email</label>
-      <input
-        type="email"
-        v-model="email"
-        placeholder="email"
-        autocomplete="email"
-        required
-      />
+      <input type="email" v-model="email" placeholder="email" autocomplete="email" required />
 
       <label for="password">Password</label>
-      <input
-        type="password"
-        v-model="password"
-        placeholder="password"
-        autocomplete="current-password"
-        required
-      />
+      <input type="password" v-model="password" placeholder="password" autocomplete="current-password" required />
 
       {{ errorMsg }}
       <button type="submit" class="button-square">Sign in</button>
@@ -41,14 +29,11 @@ export default {
   },
   beforeMount() {
     // checks if "userInfo" (user has logged in before) exists in localstorage
-    localStorage.getItem("userInfo") != null
-      ? (this.userInfo = JSON.parse(localStorage.getItem("userInfo")))
-      : (this.userInfo = []);
+    localStorage.getItem("userInfo") != null ? (this.userInfo = JSON.parse(localStorage.getItem("userInfo"))) : (this.userInfo = []);
   },
   methods: {
     async loginToUser() {
       let request = await UserService.loginToUser(this.email, this.password);
-      console.log(request);
       if (request.auth) {
         this.userInfo = {
           auth: request.auth,
