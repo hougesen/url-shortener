@@ -44,7 +44,7 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-
+  z-index: 100;
   /* 
   top: 50%;
   right: 50%;

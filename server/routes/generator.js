@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post("/newLink", async (req, res) => {
   const new_link = {
-    shortCode: generateShortCode(10),
+    shortCode: generateShortCode(5),
     link: req.body.link,
   };
 

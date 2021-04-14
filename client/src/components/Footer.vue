@@ -1,7 +1,7 @@
 <template>
   <footer>
     <p>
-      Made by <a href="https://mhouge.dk">Mads Hougesen</a> using Vue.js, Node.js & MongoDB -
+      Made by <a href="https://mhouge.dk">Mads Hougesen</a> -
       <a href="https://github.com/Hougesen/url-shortener">Github</a>
     </p>
   </footer>
@@ -13,11 +13,16 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 footer {
+  z-index: 5;
+  background-color: #fff;
   position: fixed;
   bottom: 0;
   text-align: center;
   width: 100%;
+}
+a {
+  color: #2c3e50;
 }
 </style>
